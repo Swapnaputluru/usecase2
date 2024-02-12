@@ -1,7 +1,7 @@
 pipeline {
     agent any
         environment {
-                PROJECT_ID = 'sinuous-tuner-414107'
+                PROJECT_ID = 'usecase-2-412812'
                 CLUSTER_NAME = 'cluster-1'
                 LOCATION = 'us-west1'
                 CREDENTIALS_ID = 'terraform'
@@ -37,7 +37,7 @@ pipeline {
                             script {
                                     echo "Push Docker Image"
                                     withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
-                                        sh "docker login -u vengalarao7 -p ${dockerhub}"
+                                        sh "docker login -u  -p ${dockerhub}"
                                         sh "docker push vengalarao7/dev:${env.BUILD_ID}"
                                     }
                             }
