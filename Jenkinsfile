@@ -27,7 +27,7 @@ pipeline {
             stage('Build Docker Image') {
                     steps {
                             script {
-                                    sh "docker build -t vengalarao7/dev:${env.BUILD_ID} ."
+                                    sh "docker build -t Swapnaputluru/usecase2:${env.BUILD_ID} ."
                             }
                     }
             }
@@ -36,9 +36,9 @@ pipeline {
                     steps {
                             script {
                                     echo "Push Docker Image"
-                                    withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
-                                        sh "docker login -u  -p ${dockerhub}"
-                                        sh "docker push vengalarao7/dev:${env.BUILD_ID}"
+                                    withCredentials([string(credentialsId: 'Dockerhub', variable: 'Dockerhub')]) {
+                                        sh "docker login -u  -p ${Dockerhub}"
+                                        sh "docker push Swapnaputluru/usecase2:${env.BUILD_ID}"
                                     }
                             }
                     }
