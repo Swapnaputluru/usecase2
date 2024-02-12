@@ -27,7 +27,7 @@ pipeline {
             stage('Build Docker Image') {
                     steps {
                             script {
-                                    sh "docker build -t Swapnaputluru/usecase2:${env.BUILD_ID} ."
+                                    sh "docker build -t 19980617/usecase2:${env.BUILD_ID} ."
                             }
                     }
             }
@@ -37,8 +37,8 @@ pipeline {
                             script {
                                     echo "Push Docker Image"
                                     withCredentials([string(credentialsId: 'Dockerhub', variable: 'Dockerhub')]) {
-                                        sh "docker login -u  -p ${Dockerhub}"
-                                        sh "docker push Swapnaputluru/usecase2:${env.BUILD_ID}"
+                                        sh "docker login -u 19980617 -p ${Dockerhub}"
+                                        sh "docker push 19980617/usecase2:${env.BUILD_ID}"
                                     }
                             }
                     }
