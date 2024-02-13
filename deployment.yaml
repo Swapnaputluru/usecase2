@@ -16,9 +16,9 @@ spec:
   spec:
    containers:
    - name: myapp
-     image: nginx
+     image: 19980617/usecase2:tagversion
      ports:
-     - containerPort: 80
+     - containerPort: 5000
 
 ---
 apiVersion: v1
@@ -31,5 +31,5 @@ spec:
     app: myapp
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
+      port: 5000
+      targetPort: 5000
